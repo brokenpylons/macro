@@ -26,6 +26,8 @@ Each command can be called by using just the first letter (e.g. ```macro r``` in
 
 By soucing ```macro keep``` the script is overriden by a function that also saves the current history to a file, which is then loaded in the new shell when recording. That means you can use the up arrow to get previously called commands. I suggest you call this in your ```.bashrc```.
 
+The script stores the registers and the history in the ```~/.local/share/macro``` directory.
+
 ## Aliases
 
 The recommended way to use multiple registers is to create an alias for each of them. You can do that by calling:
