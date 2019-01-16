@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+folder=~/.local/share/macro
+historyfile=${folder}/history.sh
+registerfile=${folder}/${REGISTER:-default}.sh
+
+read -r -d '' rc << EOF
+source ~/.bashrc
+PS1="(recording)\$PS1"
+[[ \$KEEPHISTORY == 1 ]] && HISTFILE="$historyfile" history -r
+HISTFILE="$registerfile" 
+EOF
+
+read -r -d '' keephistory << EOF
+macro() {
+    HISTFILE="$historyfile" history -w
+    KEEPHISTORY=1 command macro "\$@"
+}
+EOF
+
+usage() {
+    echo "usage: macro
+       macro {record|view|edit|help}
+       macro save FILE
+       source <(macro keep)"
+}
+
+case $1 in
+r|record)
+    mkdir -p "$folder"
+    rm -f "$registerfile"
+    bash --rcfile <(echo "$rc")
+    ;;
+v|view)
+    if [[ -r $registerfile ]]
+    then
+        cat "$registerfile"
+    fi
+    ;;
+e|edit)
+    "${EDITOR:-vi}" "$registerfile"
+    ;;
+s|save)
+    cp "$registerfile" "$2"
+    ;;
+'')
+    if [[ -r $registerfile ]]
+    then
+        source "$registerfile"
+    fi
+    ;;
+k|keep)
+    echo "$keephistory"
+    ;;
+h|help)
+    usage
+    ;;
+*)
+    echo "unknown command: $1"
+    usage
+    exit 1
+    ;;
+esac
