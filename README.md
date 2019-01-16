@@ -24,7 +24,7 @@ sudo cp macro /usr/local/bin
 
 Each command can be called by using just the first letter (e.g. ```macro r``` instead of ```macro record```).
 
-By soucing ```macro keep``` the script is overriden by a function that also saves the current history to a file, which is then loaded in the new shell when recording. That means you can use the up arrow to get previously called commands. I suggest you call this in your ```.bashrc```.
+By sourcing ```macro keep``` the script is overriden by a function that also saves the current history to a file, which is then loaded in the new shell when recording. That means you can use the up arrow to get previously called commands. I suggest you call this in your ```.bashrc```.
 
 The script stores the registers and the history in the ```~/.local/share/macro``` directory.
 
