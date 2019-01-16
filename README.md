@@ -46,5 +46,8 @@ This adds commands of the form ```q<register>``` (e.g. ```qq``` for register q).
 
 To make the aliases persistent add them to ```.bashrc```.
 
+## Contributing
+If you find bugs or have any suggestions please open an issue. Pull requests are also welcome.
+
 ## License
 This repository is placed under the GPL v3.0. See LICENSE for more details.
