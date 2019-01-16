@@ -1,7 +1,7 @@
 # macro
 This is a script for people (like me) that get stuck into a loop of manually calling the same few commands over and over again and are too lazy to open the editor and make a script. The idea is similar to vim macros. You can record the commands to a register and then replay them.
 
-[![asciicast](https://asciinema.org/a/221835.svg)](https://asciinema.org/a/221835)
+<script id="asciicast-221835" src="https://asciinema.org/a/221835.js" async></script>
 
 ## Installation
 
