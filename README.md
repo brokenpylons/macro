@@ -27,25 +27,25 @@ sudo cp macro /usr/local/bin
 
 Each command can be called by using just the first letter (e.g. ```macro r``` instead of ```macro record```).
 
-By sourcing ```macro keep``` the script is overriden by a function that also saves the current history to a file, which is then loaded in the new shell when recording. That means you can use the up arrow to get previously called commands. I suggest you call this in your ```.bashrc```.
+By sourcing ```macro keep``` the script is overriden by a function that also saves the history of the current session to a file, which is then loaded in the new shell when recording. That means you can use the up arrow to get previously called commands. To always enable this option you need to put this command to ```.bashrc```.
 
 The script stores the registers and the history in the ```~/.local/share/macro``` directory.
 
 ## Aliases
 
-The recommended way to use multiple registers is to create an alias for each of them. You can do that by calling:
+The intended way to use multiple registers is to create an alias for each of them. You can do that by calling:
 ```
 alias <name>='REGISTER=<register> macro '
 ```
 
-For example, I use the following configuration:
+For example, you can use the following configuration:
 ```
 for x in {a..z}
 do
     eval "alias q$x='REGISTER=$x macro '"
 done
 ```
-This adds commands of the form ```q<register>``` (e.g. ```qq``` for register q). For recording I call ```qq r``` and then replay the macro using ```qq```.
+This adds commands of the form ```q<register>``` (e.g. ```qq``` for register q). For recording you call ```qq r``` and then replay the macro using ```qq```.
 
 To make the aliases persistent add them to ```.bashrc```.
 
