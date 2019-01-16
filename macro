@@ -40,6 +40,11 @@ e|edit)
     "${EDITOR:-vi}" "$registerfile"
     ;;
 s|save)
+    if [[ -z $2 ]]
+    then
+        echo 'macro: no file specified'
+        exit 1
+    fi
     cp "$registerfile" "$2"
     ;;
 '')
