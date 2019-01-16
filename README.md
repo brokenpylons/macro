@@ -13,7 +13,7 @@ sudo cp macro /usr/local/bin
 
 | Command                        | Description                                                            |
 | -----------------------------  | ---------------------------------------------------------------------- |
-|```macro record```              | Record the macro                                                       |
+|```macro record```              | Record the macro (exit with ```C-d```)                                 |
 |```macro```                     | Replay the recorded macro                                              |
 |```macro view```                | Print the recorded commands to the terminal                            |
 |```macro edit```                | Edit the commands using ```$EDITOR```                                  |
