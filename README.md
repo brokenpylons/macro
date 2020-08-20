@@ -10,6 +10,10 @@ Install by cloning the repository and running:
 
 ```
 sudo cp macro /usr/local/bin
+
+# Or
+
+sudo wget -qcO /usr/local/bin/macro https://raw.githubusercontent.com/brokenpylons/macro/master/macro
 ```
 
 ## Commands
