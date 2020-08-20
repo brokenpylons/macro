@@ -7,7 +7,7 @@ read -r -d '' rc << EOF
 source ~/.bashrc
 PS1="(recording)\$PS1"
 [[ \$KEEPHISTORY == 1 ]] && HISTFILE="$historyfile" history -r
-HISTFILE="$registerfile" 
+HISTFILE="$registerfile"
 EOF
 
 read -r -d '' keephistory << EOF
